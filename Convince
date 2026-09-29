@@ -111,7 +111,7 @@
 <body>
 
     <div class="container" id="mainCard">
-        <div class="step-indicator" id="stepIndicator">Page 1 of 7</div>
+        <div class="step-counter" id="stepIndicator">Page 1 of 7</div>
         <span class="glow-heart" id="cardEmoji">✨</span>
         <h1 id="cardTitle">To the most precious person...</h1>
         <p id="cardText">I created this special space just for you, because standard words could never express how deeply sorry I am, and how much you mean to me.</p>
