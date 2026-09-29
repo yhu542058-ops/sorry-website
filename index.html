@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Sorry Letter to You...</title>
+    <title>For You, My Everything...</title>
     <style>
         body {
             margin: 0;
@@ -24,7 +24,7 @@
             border-radius: 20px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 320px;
+            max-width: 340px;
             width: 90%;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             animation: fadeIn 0.4s ease-in-out;
@@ -34,19 +34,24 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .bear-img {
-            width: 130px;
-            height: 130px;
+            width: 120px;
+            height: 120px;
             object-fit: contain;
             margin-bottom: 10px;
             border-radius: 10px;
         }
-        h1 { color: #ff6b81; font-size: 20px; margin-bottom: 10px; }
+        h1 { color: #ff6b81; font-size: 19px; margin-bottom: 10px; }
         p { font-size: 14px; color: #ddd; line-height: 1.5; margin-bottom: 20px; }
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
         .btn {
             background: linear-gradient(135deg, #ff4757, #ff6b81);
             color: white;
             border: none;
-            padding: 11px 22px;
+            padding: 11px 20px;
             font-size: 14px;
             border-radius: 30px;
             cursor: pointer;
@@ -54,15 +59,22 @@
             transition: 0.2s;
         }
         .btn:active { transform: scale(0.95); }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            box-shadow: none;
+        }
     </style>
 </head>
 <body>
 
     <div class="card" id="cardContent">
         <img id="bearImage" class="bear-img" src="https://media1.giphy.com/media/9BuAUq43G071K/giphy.gif" alt="Cute Bear">
-        <h1 id="cardTitle">It's late night... 🌙</h1>
-        <p id="messageText">I've been walking for hours, holding something heavy... not in hands, but in heart...</p>
-        <button class="btn" id="actionBtn" onclick="nextStep()">Let me talk...</button>
+        <h1 id="cardTitle">Before you skip this... 🥺</h1>
+        <p id="messageText">Please take a minute to read this. My heart has been so heavy because I know I messed up.</p>
+        <div class="btn-group" id="btnGroup">
+            <button class="btn" id="actionBtn" onclick="nextStep()">Continue 💌</button>
+        </div>
     </div>
 
     <script>
@@ -71,38 +83,56 @@
             const bear = document.getElementById("bearImage");
             const title = document.getElementById("cardTitle");
             const text = document.getElementById("messageText");
-            const btn = document.getElementById("actionBtn");
+            const btnGroup = document.getElementById("btnGroup");
 
             if (step === 1) {
                 bear.src = "https://media.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.gif";
-                title.innerHTML = "My Sorry Letter to You...";
-                text.innerHTML = "I've been sitting here for hours, trying to find the right words to tell you how sorry I am.";
-                btn.innerHTML = "Continue reading...";
+                title.innerHTML = "I hate seeing you upset...";
+                text.innerHTML = "Knowing that I am the reason behind your tears breaks my heart into a million pieces. You never deserved that pain.";
                 step++;
             } else if (step === 2) {
                 bear.src = "https://media.giphy.com/media/12bjQ7uiesuCKs/giphy.gif";
-                title.innerHTML = "I know I hurt you...";
-                text.innerHTML = "You didn't deserve that. I realize how much I've hurt the most precious person in my life.";
-                btn.innerHTML = "Read my letter...";
+                title.innerHTML = "You mean the world to me 😭";
+                text.innerHTML = "Out of everyone in this world, you are the most special person in my life. I can't imagine a single day without your smile.";
                 step++;
             } else if (step === 3) {
                 bear.src = "https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif";
-                title.innerHTML = "I'm so sorry... 💔";
-                text.innerHTML = "I know words can't undo what I did, but I need you to know that you mean everything to me. I promise to do better, for you.";
-                btn.innerHTML = "Can you please forgive me?...";
+                title.innerHTML = "I am truly, deeply sorry... 💔";
+                text.innerHTML = "I made a mistake, and I own up to it. I promise to learn from this, to listen better, and to treat you like a queen always.";
                 step++;
             } else if (step === 4) {
                 bear.src = "https://media.giphy.com/media/3og0IPxMM0erATueVW/giphy.gif";
-                title.innerHTML = "Just your arms around me...";
-                text.innerHTML = "I don't need anything fancy right now. Just your arms around me, that's all I want.";
-                btn.innerHTML = "Send a hug 💖";
+                title.innerHTML = "Can you find it in your heart...? 🥺";
+                text.innerHTML = "To forgive me? I promise I'll make it up to you. I want us to be happy again, just you and me.";
+                // Change buttons for the final choice
+                btnGroup.innerHTML = `
+                    <button class="btn" onclick="finalYes()">Yes, I forgive you ❤️</button>
+                    <button class="btn btn-secondary" onclick="finalNo()">Still mad 😤</button>
+                `;
                 step++;
-            } else {
-                bear.src = "https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif";
-                title.innerHTML = "Thank You! 🥰";
-                text.innerHTML = "This flower will never wilt, just like my love for you. I promise to cherish you every single day!";
-                btn.style.display = "none";
             }
+        }
+
+        function finalYes() {
+            const bear = document.getElementById("bearImage");
+            const title = document.getElementById("cardTitle");
+            const text = document.getElementById("messageText");
+            const btnGroup = document.getElementById("btnGroup");
+
+            bear.src = "https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif";
+            title.innerHTML = "Yay! Thank you! 🥰💖";
+            text.innerHTML = "You just made me the happiest person alive! I love you so much, and I promise I will never let you down again!";
+            btnGroup.innerHTML = `<button class="btn" onclick="location.reload()">Start Over ✨</button>`;
+        }
+
+        function finalNo() {
+            const bear = document.getElementById("bearImage");
+            const title = document.getElementById("cardTitle");
+            const text = document.getElementById("messageText");
+            
+            bear.src = "https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif";
+            title.innerHTML = "Please don't say that... 🥺";
+            text.innerHTML = "I will keep saying sorry until you smile again, because losing you is not an option. Give me another chance?";
         }
     </script>
 </body>
