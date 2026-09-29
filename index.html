@@ -20,31 +20,29 @@
         }
         .card {
             background: rgba(255, 255, 255, 0.05);
-            padding: 24px;
-            border-radius: 20px;
-            backdrop-filter: blur(12px);
+            padding: 30px 25px;
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            max-width: 350px;
+            max-width: 360px;
             width: 90%;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
             animation: fadeIn 0.4s ease-in-out;
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: scale(0.95) translateY(10px); }
             to { opacity: 1; transform: scale(1) translateY(0); }
         }
-        .bear-img {
-            width: 130px;
-            height: 130px;
-            object-fit: contain;
-            margin-bottom: 12px;
-            border-radius: 12px;
+        .icon-symbol {
+            font-size: 45px;
+            margin-bottom: 15px;
+            display: block;
         }
-        h1 { color: #ff6b81; font-size: 18px; margin-bottom: 8px; }
-        p { font-size: 13.5px; color: #ddd; line-height: 1.55; margin-bottom: 18px; }
+        h1 { color: #ff6b81; font-size: 20px; margin-bottom: 12px; font-weight: 600; }
+        p { font-size: 14px; color: #e0e0e0; line-height: 1.6; margin-bottom: 25px; }
         .btn-group {
             display: flex;
-            gap: 8px;
+            gap: 10px;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -52,12 +50,13 @@
             background: linear-gradient(135deg, #ff4757, #ff6b81);
             color: white;
             border: none;
-            padding: 10px 20px;
-            font-size: 13.5px;
+            padding: 12px 24px;
+            font-size: 14px;
             border-radius: 30px;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
             transition: 0.2s;
+            font-weight: 600;
         }
         .btn:active { transform: scale(0.95); }
         .btn-secondary {
@@ -68,10 +67,10 @@
         .step-counter {
             font-size: 10px;
             color: #ff94a2;
-            margin-bottom: 6px;
-            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 700;
         }
     </style>
 </head>
@@ -79,11 +78,11 @@
 
     <div class="card" id="cardContent">
         <div class="step-counter" id="stepIndicator">Page 1 of 12</div>
-        <img id="bearImage" class="bear-img" src="https://media.giphy.com/media/26vUBWsGxrj91nLMY/giphy.gif" alt="Cute Bear">
-        <h1 id="cardTitle">Please don't skip this... 🌙</h1>
+        <span class="icon-symbol" id="cardIcon">🌙</span>
+        <h1 id="cardTitle">Please don't skip this...</h1>
         <p id="messageText">It’s late and I’ve been staring at your chat, missing you so much. My heart feels so heavy because we aren't okay. Please read this...</p>
         <div class="btn-group" id="btnGroup">
-            <button class="btn" id="actionBtn" onclick="nextStep()">Next 💖</button>
+            <button class="btn" id="actionBtn" onclick="nextStep()">Open my heart 💌</button>
         </div>
     </div>
 
@@ -91,75 +90,75 @@
         let step = 1;
         function nextStep() {
             const indicator = document.getElementById("stepIndicator");
-            const bear = document.getElementById("bearImage");
+            const icon = document.getElementById("cardIcon");
             const title = document.getElementById("cardTitle");
             const text = document.getElementById("messageText");
             const btnGroup = document.getElementById("btnGroup");
 
             if (step === 1) {
                 indicator.innerHTML = "Page 2 of 12";
-                bear.src = "https://media.giphy.com/media/13CoXDiaCcCoyY/giphy.gif";
-                title.innerHTML = "I hate this distance between us 🥺";
+                icon.innerHTML = "🥺";
+                title.innerHTML = "I hate this distance between us";
                 text.innerHTML = "The silence in our chat is killing me. Everything around me reminds me of you, and knowing you're upset with me breaks my soul.";
                 step++;
             } else if (step === 2) {
                 indicator.innerHTML = "Page 3 of 12";
-                bear.src = "https://media.giphy.com/media/l0HlNQ03J5JxX6lva/giphy.gif";
-                title.innerHTML = "I messed up, and I know it 💔";
+                icon.innerHTML = "💔";
+                title.innerHTML = "I messed up, and I know it";
                 text.innerHTML = "I hate that I caused tears to fall from the same eyes that look at me with so much love. You never, ever deserved that from me.";
                 step++;
             } else if (step === 3) {
                 indicator.innerHTML = "Page 4 of 12";
-                bear.src = "https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif";
+                icon.innerHTML = "💭";
                 title.innerHTML = "I've been replaying everything...";
                 text.innerHTML = "I’ve been sitting here thinking about how foolish I was. I'd give anything to take those words back and hold you close instead.";
                 step++;
             } else if (step === 4) {
                 indicator.innerHTML = "Page 5 of 12";
-                bear.src = "https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif";
-                title.innerHTML = "You are my peace ✨";
+                icon.innerHTML = "✨";
+                title.innerHTML = "You are my peace";
                 text.innerHTML = "Without you, my days are just incomplete. You are my favorite notification, my happiness, and the best part of my entire world.";
                 step++;
             } else if (step === 5) {
                 indicator.innerHTML = "Page 6 of 12";
-                bear.src = "https://media.giphy.com/media/12bjQ7uiesuCKs/giphy.gif";
-                title.innerHTML = "I miss your voice so much 😭";
+                icon.innerHTML = "🌧️";
+                title.innerHTML = "I miss your voice so much";
                 text.innerHTML = "I miss how we talk, how we laugh, and how comfortable everything feels when I'm with you. Everything feels gray when we fight.";
                 step++;
             } else if (step === 6) {
                 indicator.innerHTML = "Page 7 of 12";
-                bear.src = "https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif";
+                icon.innerHTML = "🙇‍♂️";
                 title.innerHTML = "I take full blame...";
                 text.innerHTML = "I'm not going to defend myself or make excuses. I own my mistake completely. I just want to make things right between us.";
                 step++;
             } else if (step === 7) {
                 indicator.innerHTML = "Page 8 of 12";
-                bear.src = "https://media.giphy.com/media/3og0IPxMM0erATueVW/giphy.gif";
-                title.innerHTML = "I want to be better for you 🌹";
+                icon.innerHTML = "🌹";
+                title.innerHTML = "I want to be better for you";
                 text.innerHTML = "I want to grow up, be more mature, and treat you like the absolute queen you are. I never want to take your love for granted.";
                 step++;
             } else if (step === 8) {
                 indicator.innerHTML = "Page 9 of 12";
-                bear.src = "https://media.giphy.com/media/9BuAUq43G071K/giphy.gif";
-                title.innerHTML = "You are my home 🫂";
+                icon.innerHTML = "🫂";
+                title.innerHTML = "You are my home";
                 text.innerHTML = "No matter what happens, my heart only chooses you. Losing you is my biggest fear, and I hate knowing I hurt my safe place.";
                 step++;
             } else if (step === 9) {
                 indicator.innerHTML = "Page 10 of 12";
-                bear.src = "https://media.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.gif";
+                icon.innerHTML = "⏳";
                 title.innerHTML = "I'll wait for you forever...";
                 text.innerHTML = "Even if you need time to heal, I'm not going anywhere. I'll keep showing up with love until you can smile at me again.";
                 step++;
             } else if (step === 10) {
                 indicator.innerHTML = "Page 11 of 12";
-                bear.src = "https://media.giphy.com/media/7SF5scMBmlAFrgP3Vx/giphy.gif";
-                title.innerHTML = "I'm so deeply sorry, my love 🥺";
+                icon.innerHTML = "💌";
+                title.innerHTML = "I'm so deeply sorry, my love";
                 text.innerHTML = "You mean more to me than words can ever explain. You are my past, my present, and my entire future.";
                 step++;
             } else if (step === 11) {
                 indicator.innerHTML = "Final Page ❤️";
-                bear.src = "https://media.giphy.com/media/3o7TKWpu2VCikDCR4k/giphy.gif";
-                title.innerHTML = "Can you forgive me? 🥺💖";
+                icon.innerHTML = "💖";
+                title.innerHTML = "Can you forgive me?";
                 text.innerHTML = "Will you let me wrap my arms around you and make it all up to you? What does your heart say?";
                 
                 // Interactive choice buttons
@@ -173,35 +172,35 @@
 
         function finalYes() {
             document.getElementById("stepIndicator").innerHTML = "Thank You 🥰";
-            const bear = document.getElementById("bearImage");
+            const icon = document.getElementById("cardIcon");
             const title = document.getElementById("cardTitle");
             const text = document.getElementById("messageText");
             const btnGroup = document.getElementById("btnGroup");
 
-            bear.src = "https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif";
-            title.innerHTML = "Yay! You made me the happiest! 🥰💖";
+            icon.innerHTML = "🎉";
+            title.innerHTML = "Yay! You made me the happiest!";
             text.innerHTML = "Thank you for having such a forgiving heart, my love. I promise I will cherish you endlessly and never let you down again. I love you so much!";
             btnGroup.innerHTML = `<button class="btn" onclick="location.reload()">Replay Message ✨</button>`;
         }
 
         let noClicks = 0;
         function finalNo() {
-            const bear = document.getElementById("bearImage");
+            const icon = document.getElementById("cardIcon");
             const title = document.getElementById("cardTitle");
             const text = document.getElementById("messageText");
             
             noClicks++;
             if (noClicks === 1) {
-                bear.src = "https://media.giphy.com/media/12bjQ7uiesuCKs/giphy.gif";
-                title.innerHTML = "Ouch, that hurts... 🥺";
+                icon.innerHTML = "🥺";
+                title.innerHTML = "Ouch, that hurts...";
                 text.innerHTML = "I know I messed up and it takes time to heal, but please don't push me away. I miss you too much.";
             } else if (noClicks === 2) {
-                bear.src = "https://media.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.gif";
-                title.innerHTML = "I'm not giving up on us 💔";
+                icon.innerHTML = "💔";
+                title.innerHTML = "I'm not giving up on us";
                 text.innerHTML = "Even if you're still mad, my love for you is real. I'll wait right here until you're ready to smile at me again.";
             } else {
-                bear.src = "https://media.giphy.com/media/3og0IPxMM0erATueVW/giphy.gif";
-                title.innerHTML = "Pretty please, my heart? 🥺💖";
+                icon.innerHTML = "✨";
+                title.innerHTML = "Pretty please, my heart?";
                 text.innerHTML = "You're too special to stay angry at me forever! Tap 'Yes, I forgive you' and let's end this fight!";
             }
         }
