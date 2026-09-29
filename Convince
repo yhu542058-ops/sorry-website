@@ -111,7 +111,7 @@
 <body>
 
     <div class="container" id="mainCard">
-        <div class="step-indicator" id="stepIndicator">Chapter I</div>
+        <div class="step-indicator" id="stepIndicator">Page 1 of 7</div>
         <span class="glow-heart" id="cardEmoji">✨</span>
         <h1 id="cardTitle">To the most precious person...</h1>
         <p id="cardText">I created this special space just for you, because standard words could never express how deeply sorry I am, and how much you mean to me.</p>
@@ -125,73 +125,43 @@
 
         const story = [
             {
-                indicator: "Chapter I",
+                indicator: "Page 1 of 7",
                 emoji: "✨",
                 title: "To the most precious person...",
                 text: "I created this special space just for you, because standard words could never express how deeply sorry I am, and how much you mean to me."
             },
             {
-                indicator: "Chapter II",
+                indicator: "Page 2 of 7",
                 emoji: "🥺",
                 title: "I hate knowing I hurt you",
-                text: "The hardest part of all this is knowing that my actions caused pain to the person whose smile means the entire world to me."
+                text: "The hardest part of all this is knowing that my actions caused pain to the person whose smile means the entire world to me. You never deserved that."
             },
             {
-                indicator: "Chapter III",
-                emoji: "🥀",
-                title: "You never deserved tears",
-                text: "You bring pure light, warmth, and grace into my life. The last thing you ever deserved from me was a heavy heart or sorrow."
-            },
-            {
-                indicator: "Chapter IV",
+                indicator: "Page 3 of 7",
                 emoji: "💭",
                 title: "Sitting with my regrets",
-                text: "I’ve spent hours replaying everything in my mind. I'd give anything to erase my mistake and replace it with reassurance and love."
+                text: "I’ve spent hours replaying everything in my mind. I'd give anything to erase my mistake and replace it with reassurance, warmth, and pure love."
             },
             {
-                indicator: "Chapter V",
+                indicator: "Page 4 of 7",
                 emoji: "🕊️",
                 title: "You are my absolute peace",
-                text: "When things are good between us, everything in life makes sense. You are my safe haven, my comfort, and my favorite place to be."
+                text: "When things are good between us, everything in life makes sense. You are my safe haven, my comfort, and my favorite place in this entire world."
             },
             {
-                indicator: "Chapter VI",
+                indicator: "Page 5 of 7",
                 emoji: "🌧️",
                 title: "Everything feels dim without you",
-                text: "The silence between us is deafening. I miss your laugh, your voice, and the way your presence instantly fixes my worst days."
+                text: "The silence between us is deafening. I miss your laugh, your voice, and the way your presence instantly turns my worst days into beautiful ones."
             },
             {
-                indicator: "Chapter VII",
-                emoji: "🙇‍♂️",
-                title: "No excuses, just my truth",
-                text: "I'm not trying to justify what happened. I own my mistake completely, and I am stepping up to be better—for you, and for us."
-            },
-            {
-                indicator: "Chapter VIII",
+                indicator: "Page 6 of 7",
                 emoji: "🌹",
                 title: "My promise to cherish you",
-                text: "I want to mature, listen better, and treat you like the absolute queen you are every single day. I never want to take you for granted."
+                text: "I want to mature, listen better, and treat you like the absolute queen you are every single day. I never want to take your love for granted again."
             },
             {
-                indicator: "Chapter IX",
-                emoji: "🫂",
-                title: "My heart only chooses you",
-                text: "No matter what hurdles we face, my feelings have never wavered. Losing you is my worst fear because you are my home."
-            },
-            {
-                indicator: "Chapter X",
-                emoji: "⏳",
-                title: "I will wait for you patiently",
-                text: "Even if your heart needs time to heal and forgive, I'm not going anywhere. I will prove my sincerity every single day."
-            },
-            {
-                indicator: "Chapter XI",
-                emoji: "💌",
-                title: "You are my entire future",
-                text: "You are my past, my present, and everything I look forward to. My life is infinitely better with you in it."
-            },
-            {
-                indicator: "Chapter XII",
+                indicator: "Page 7 of 7",
                 emoji: "💖",
                 title: "Can you forgive me?",
                 text: "Will you let me hold you close, wipe away any doubts, and make it all up to you? What does your heart say?",
@@ -205,7 +175,6 @@
                 let data = story[currentStep - 1];
                 let card = document.getElementById("mainCard");
                 
-                // Smooth fade transition effect
                 card.style.opacity = 0;
                 card.style.transform = "translateY(10px)";
 
