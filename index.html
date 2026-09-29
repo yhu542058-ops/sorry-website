@@ -20,7 +20,7 @@
         }
         .card {
             background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
+            padding: 25px;
             border-radius: 20px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -33,27 +33,33 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        h1 { color: #ff6b81; font-size: 21px; margin-bottom: 12px; }
-        p { font-size: 15px; color: #ddd; line-height: 1.6; margin-bottom: 25px; }
+        .bear-img {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+        h1 { color: #ff6b81; font-size: 20px; margin-bottom: 10px; }
+        p { font-size: 14px; color: #ddd; line-height: 1.5; margin-bottom: 20px; }
         .btn {
             background: linear-gradient(135deg, #ff4757, #ff6b81);
             color: white;
             border: none;
-            padding: 12px 25px;
-            font-size: 15px;
+            padding: 11px 22px;
+            font-size: 14px;
             border-radius: 30px;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
             transition: 0.2s;
         }
         .btn:active { transform: scale(0.95); }
-        .emoji-icon { font-size: 45px; margin-bottom: 10px; display: block; }
     </style>
 </head>
 <body>
 
     <div class="card" id="cardContent">
-        <span class="emoji-icon" id="cardEmoji">🧸</span>
+        <img id="bearImage" class="bear-img" src="https://media1.giphy.com/media/9BuAUq43G071K/giphy.gif" alt="Cute Bear">
         <h1 id="cardTitle">It's late night... 🌙</h1>
         <p id="messageText">I've been walking for hours, holding something heavy... not in hands, but in heart...</p>
         <button class="btn" id="actionBtn" onclick="nextStep()">Let me talk...</button>
@@ -62,39 +68,39 @@
     <script>
         let step = 1;
         function nextStep() {
-            const emoji = document.getElementById("cardEmoji");
+            const bear = document.getElementById("bearImage");
             const title = document.getElementById("cardTitle");
             const text = document.getElementById("messageText");
             const btn = document.getElementById("actionBtn");
 
             if (step === 1) {
-                emoji.innerHTML = "🥺";
+                bear.src = "https://media.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.gif";
                 title.innerHTML = "My Sorry Letter to You...";
                 text.innerHTML = "I've been sitting here for hours, trying to find the right words to tell you how sorry I am.";
                 btn.innerHTML = "Continue reading...";
                 step++;
             } else if (step === 2) {
-                emoji.innerHTML = "💔";
+                bear.src = "https://media.giphy.com/media/12bjQ7uiesuCKs/giphy.gif";
                 title.innerHTML = "I know I hurt you...";
                 text.innerHTML = "You didn't deserve that. I realize how much I've hurt the most precious person in my life.";
                 btn.innerHTML = "Read my letter...";
                 step++;
             } else if (step === 3) {
-                emoji.innerHTML = "✨";
-                title.innerHTML = "I'm so sorry...";
-                text.innerHTML = "I know words can't undo what I did, but I need you to know that you mean everything to me. I promise to do better, to be better, for you.";
+                bear.src = "https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif";
+                title.innerHTML = "I'm so sorry... 💔";
+                text.innerHTML = "I know words can't undo what I did, but I need you to know that you mean everything to me. I promise to do better, for you.";
                 btn.innerHTML = "Can you please forgive me?...";
                 step++;
             } else if (step === 4) {
-                emoji.innerHTML = "🫂";
+                bear.src = "https://media.giphy.com/media/3og0IPxMM0erATueVW/giphy.gif";
                 title.innerHTML = "Just your arms around me...";
                 text.innerHTML = "I don't need anything fancy right now. Just your arms around me, that's all I want.";
                 btn.innerHTML = "Send a hug 💖";
                 step++;
             } else {
-                emoji.innerHTML = "🌹";
-                title.innerHTML = "I have something special for you...";
-                text.innerHTML = "This flower will never wilt. Just like my love for you. I promise to cherish you every single day! You mean everything to me. 🥰";
+                bear.src = "https://media.giphy.com/media/5VKbvrjxpVJCM/giphy.gif";
+                title.innerHTML = "Thank You! 🥰";
+                text.innerHTML = "This flower will never wilt, just like my love for you. I promise to cherish you every single day!";
                 btn.style.display = "none";
             }
         }
