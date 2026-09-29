@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Only Love... 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at center, #1f1124 0%, #0b060d 100%);
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 380px;
+            width: 90%;
+            padding: 40px 25px;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 107, 129, 0.2);
+            border-radius: 35px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 107, 129, 0.1);
+            animation: cardAppear 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        @keyframes cardAppear {
+            from { opacity: 0; transform: translateY(20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .glow-heart {
+            font-size: 55px;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+            display: inline-block;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(255, 107, 129, 0.8)); }
+            50% { transform: scale(1.12); filter: drop-shadow(0 0 30px rgba(255, 107, 129, 1)); }
+            100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(255, 107, 129, 0.8)); }
+        }
+
+        .step-indicator {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #ff94a2;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #ff6b81;
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 14.5px;
+            color: #f0f0f0;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #ff4757, #ff6b81);
+            color: white;
+            border: none;
+            padding: 13px 30px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 71, 87, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: none;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="mainCard">
+        <div class="step-indicator" id="stepIndicator">Page 1 of 7</div>
+        <span class="glow-heart" id="cardEmoji">💌</span>
+        <h1 id="cardTitle">Please read this, my love...</h1>
+        <p id="cardText">I built this just for you because my heart has been so heavy. Please take a few moments to read what I feel deep inside.</p>
+        <div class="btn-group" id="btnGroup">
+            <button class="btn" onclick="nextPage()">Open My Heart ✨</button>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+
+        const story = [
+            {
+                indicator: "Page 1 of 7",
+                emoji: "💌",
+                title: "Please read this, my love...",
+                text: "I built this just for you because my heart has been so heavy. Please take a few moments to read what I feel deep inside."
+            },
+            {
+                indicator: "Page 2 of 7",
+                emoji: "🥺",
+                title: "I hate seeing you upset",
+                text: "Knowing that I am the reason behind your tears and your hurt breaks my soul into pieces. You never, ever deserved pain from me."
+            },
+            {
+                indicator: "Page 3 of 7",
+                emoji: "💭",
+                title: "Replaying every moment",
+                text: "I’ve been sitting alone thinking about how foolish I was. I would give anything to take back my words and hold you close instead."
+            },
+            {
+                indicator: "Page 4 of 7",
+                emoji: "✨",
+                title: "You are my absolute peace",
+                text: "Without you, my days are completely empty. You are my favorite notification, my happiness, and the absolute best part of my world."
+            },
+            {
+                indicator: "Page 5 of 7",
+                emoji: "🌧️",
+                title: "I miss your voice so much",
+                text: "Everything feels dull and gray when we aren't okay. I miss how we laugh, how we talk, and how safe I feel only when I'm with you."
+            },
+            {
+                indicator: "Page 6 of 7",
+                emoji: "🌹",
+                title: "My promise to cherish you",
+                text: "I own my mistake completely. I want to grow up, be better for you, and treat you like a queen every single day. I never want to take you for granted."
+            },
+            {
+                indicator: "Page 7 of 7",
+                emoji: "💖",
+                title: "Can you forgive me?",
+                text: "Will you let me wrap my arms around you and make it all up to you? What does your heart say?",
+                isChoice: true
+            }
+        ];
+
+        function nextPage() {
+            currentStep++;
+            if (currentStep <= story.length) {
+                let data = story[currentStep - 1];
+                let card = document.getElementById("mainCard");
+                
+                card.style.opacity = 0;
+                card.style.transform = "translateY(10px)";
+
+                setTimeout(() => {
+                    document.getElementById("stepIndicator").innerText = data.indicator;
+                    document.getElementById("cardEmoji").innerText = data.emoji;
+                    document.getElementById("cardTitle").innerText = data.title;
+                    document.getElementById("cardText").innerText = data.text;
+
+                    let btnGroup = document.getElementById("btnGroup");
+                    if (data.isChoice) {
+                        btnGroup.innerHTML = `
+                            <button class="btn" onclick="sayYes()">Yes, I forgive you ❤️</button>
+                            <button class="btn btn-secondary" onclick="sayNo()">Still mad 😤</button>
+                        `;
+                    } else {
+                        btnGroup.innerHTML = `<button class="btn" onclick="nextPage()">Continue ✨</button>`;
+                    }
+
+                    card.style.opacity = 1;
+                    card.style.transform = "translateY(0)";
+                }, 200);
+            }
+        }
+
+        function sayYes() {
+            document.getElementById("stepIndicator").innerText = "Forever Yours";
+            document.getElementById("cardEmoji").innerText = "🎉";
+            document.getElementById("cardTitle").innerText = "You made me the happiest! 🥰";
+            document.getElementById("cardText").innerText = "Thank you for having such a forgiving, golden heart, my love. I promise I will cherish you endlessly and never let you down again!";
+            document.getElementById("btnGroup").innerHTML = `<button class="btn" onclick="location.reload()">Replay Message ✨</button>`;
+        }
+
+        let clickCount = 0;
+        function sayNo() {
+            clickCount++;
+            let title = document.getElementById("cardTitle");
+            let text = document.getElementById("cardText");
+            let emoji = document.getElementById("cardEmoji");
+
+            if (clickCount === 1) {
+                emoji.innerText = "💔";
+                title.innerText = "Ouch, my heart... 🥺";
+                text.innerText = " I know I messed up and it takes time to heal, but please don't push me away. I miss you too much.";
+            } else if (clickCount === 2) {
+                emoji.innerText = "🥀";
+                title.innerText = "I'm not giving up on us";
+                text.innerText = "Even if you're still mad, my love for you is real. I'll wait right here until you're ready to smile at me again.";
+            } else {
+                emoji.innerText = "✨";
+                title.innerText = "Pretty please, my heart? 💖";
+                text.innerText = "You're too special to stay angry at me forever! Tap 'Yes, I forgive you' and let's end this fight!";
+            }
+        }
+    </script>
+</body>
+</html>
